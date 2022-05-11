@@ -16,6 +16,8 @@ pipeline {
         stage('Test') {
             steps {
                  script {
+                    gv = load "script.groovy"
+
                     gv.deployApp()
                     gv.CopyAppToAutomation()
                     gv.deployAutomationAppium()
@@ -30,6 +32,8 @@ pipeline {
         stage('Staging') {
             steps {
                  script {
+                    gv = load "script.groovy"
+
                     gv.deployApp()
                     gv.CopyAppToAutomation()
                     gv.deployAutomationAppium()
