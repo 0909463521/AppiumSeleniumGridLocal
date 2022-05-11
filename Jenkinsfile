@@ -26,9 +26,6 @@ pipeline {
             }
             
         }
-    }
-    stages {
-        
         stage('Staging') {
             steps {
                  script {
@@ -43,4 +40,5 @@ pipeline {
             
         }
     }
+   
 }
