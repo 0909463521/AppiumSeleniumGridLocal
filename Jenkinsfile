@@ -35,7 +35,8 @@ pipeline {
                     gv.CopyAppToAutomation()
                     gv.deployAutomationAppium()
 
-            
+                    sh "kill `lsof -t -i:4444`"
+
                     
                 }
             }
