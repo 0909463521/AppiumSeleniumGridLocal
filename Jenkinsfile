@@ -24,7 +24,7 @@ pipeline {
                 }
                 stage('Node') {
                     steps{
-                        sleep 6000
+                        sleep 10
 
                         sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
 
