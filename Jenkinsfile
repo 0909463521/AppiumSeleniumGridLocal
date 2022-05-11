@@ -22,7 +22,7 @@ pipeline {
 
                     }
                 }
-                stage('Node') {
+                stage('Node Browser') {
                     steps{
                         sleep 10
 
@@ -30,25 +30,17 @@ pipeline {
 
                     }
                 }
-            }
-            
-        }
-        stage('Staging') {
-            steps {
-                 script {
-                    gv = load "script.groovy"
+                stage('Node Appium') {
+                    steps{
+                        sleep 10
+                        sh " appium -p 4725 --nodeconfig ${WORKSPACE}/Nodedevice1.json "
 
-                    gv.deployApp()
-                    gv.CopyAppToAutomation()
-                    gv.deployAutomationAppium()
-
-                    sh "kill `lsof -t -i:4444`"
-
-                    
+                    }
                 }
             }
             
         }
+        
     }
    
 }
