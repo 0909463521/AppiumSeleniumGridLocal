@@ -25,4 +25,18 @@ pipeline {
             
         }
     }
+    stages {
+        
+        stage('Staging') {
+            steps {
+                 script {
+                    gv.deployApp()
+                    gv.CopyAppToAutomation()
+                    gv.deployAutomationAppium()
+                    
+                }
+            }
+            
+        }
+    }
 }
