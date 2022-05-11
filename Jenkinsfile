@@ -14,14 +14,15 @@ pipeline {
     stages {
         
         stage('Set up Grid') {
-            steps {
-                 script {
-                    gv = load "script.groovy"
-
+            
+            parallel {
+                stage(“Build X”) {
                 sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role hub -hubConfig Hub.json"
-                sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
+                }
+                stage(“Build Y”) {
+                sleep 6000
 
-                    
+                sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
                 }
             }
             
