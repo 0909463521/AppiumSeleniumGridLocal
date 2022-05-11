@@ -14,11 +14,7 @@ def deployAutomationAppium()
         sh"echo deployAutomationAppium"
 
 }
-def deployAutomationAppium()
-{
-        sh"echo deployAutomationAppium"
 
-}
 
 
 return this
