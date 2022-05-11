@@ -17,12 +17,18 @@ pipeline {
             
             parallel {
                 stage('Hub') {
-                sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role hub -hubConfig Hub.json"
+                    steps{
+                        sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role hub -hubConfig Hub.json"
+
+                    }
                 }
                 stage('Node') {
-                sleep 6000
+                    steps{
+                        sleep 6000
 
-                sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
+                        sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
+
+                    }
                 }
             }
             
