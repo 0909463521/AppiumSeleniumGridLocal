@@ -13,14 +13,14 @@ pipeline {
     }
     stages {
         
-        stage('Test') {
+        stage('Set up Grid') {
             steps {
                  script {
                     gv = load "script.groovy"
 
-                    gv.deployApp()
-                    gv.CopyAppToAutomation()
-                    gv.deployAutomationAppium()
+                sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role hub -hubConfig Hub.json"
+                sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
+
                     
                 }
             }
@@ -34,6 +34,8 @@ pipeline {
                     gv.deployApp()
                     gv.CopyAppToAutomation()
                     gv.deployAutomationAppium()
+
+            
                     
                 }
             }
