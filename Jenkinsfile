@@ -16,10 +16,10 @@ pipeline {
         stage('Set up Grid') {
             
             parallel {
-                stage(“Build X”) {
+                stage('Hub') {
                 sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role hub -hubConfig Hub.json"
                 }
-                stage(“Build Y”) {
+                stage('Node') {
                 sleep 6000
 
                 sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
