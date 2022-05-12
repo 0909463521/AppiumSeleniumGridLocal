@@ -22,21 +22,21 @@ pipeline {
 
                     }
                 }
-                stage('Node Browser') {
-                    steps{
-                        sleep 10
+                // stage('Node Browser') {
+                //     steps{
+                //         sleep 10
 
-                        sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
+                //         sh "java -jar ${WORKSPACE}/selenium-server-standalone-3.141.59.jar -role node -nodeConfig Node.json"
 
-                    }
-                }
-                stage('Node Appium') {
-                    steps{
-                        sleep 10
-                        sh " appium -p 4725 --nodeconfig ${WORKSPACE}/Nodedevice1.json "
+                //     }
+                // }
+                // stage('Node Appium') {
+                //     steps{
+                //         sleep 10
+                //         sh " appium -p 4725 --nodeconfig ${WORKSPACE}/Nodedevice1.json "
 
-                    }
-                }
+                //     }
+                // }
             }
             
         }
