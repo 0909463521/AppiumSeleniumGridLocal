@@ -20,7 +20,7 @@
 "register":true,
 "registerCycle":5000,
 "hubPort":4444,
-"hubHost":"192.168.36.50",
-"hubProtocol":"http"
+"hubHost":"ci.kobiton.com",
+"hubProtocol":"https"
 }
 }
