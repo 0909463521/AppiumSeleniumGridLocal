@@ -42,8 +42,7 @@ pipeline {
                         sh "echo automation"
                         sleep 14
 
-                        sh "cd AppiumSeleniumGrid"
-                      
+                        sh "cd ${WORKSPACE}/AppiumSeleniumGrid"
                         sh "ls"
 
 
