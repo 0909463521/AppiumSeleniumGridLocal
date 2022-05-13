@@ -43,7 +43,7 @@ pipeline {
                         sleep 14
 
                        
-                        sh "mvn test"
+                        sh "mvn test -P BachVu"
 
 
                     }
