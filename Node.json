@@ -6,7 +6,14 @@
       "marionette": true,
       "maxInstances": 5,
       "seleniumProtocol": "WebDriver"
-    }],
+    },
+    {
+      "browserName": "firefox",
+      "marionette": true,
+      "maxInstances": 5,
+      "seleniumProtocol": "WebDriver"
+    }
+  ],
   "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
   "maxSession": 5,
   "port": -1,
