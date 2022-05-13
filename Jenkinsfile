@@ -39,8 +39,7 @@ pipeline {
                 }
                 stage('Automation Test') {
                     steps{
-                        sleep 12
-                        sh " appium -p 4725 --nodeconfig ${WORKSPACE}/Nodedevice1.json "
+                        sh "echo automation"
 
                     }
                 }
