@@ -44,7 +44,6 @@ pipeline {
 
                        
                         sh "mvn test -P BachVu"
-                        currentBuild.result = 'SUCCESS'
                         return
 
 
