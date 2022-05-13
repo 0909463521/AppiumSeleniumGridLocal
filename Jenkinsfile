@@ -44,12 +44,11 @@ pipeline {
 
                        
                         sh "mvn test -P BachVu"
-                        return
 
 
                     }
                 }
-                
+                return
 
             }
             
