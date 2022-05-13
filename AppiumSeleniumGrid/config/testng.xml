@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parallel Test Suite" parallel="tests" thread-count="3" verbose="1" >
+    <!-- This parameter will be passed to every test in this suite -->
+    <test name="Testcase One">
+        <parameter name="platformName" value="chrome"/>
+
+        <classes>
+            <class name="Demo"/>
+
+        </classes>
+    </test>
+    <test name="Testcase Two">
+        <parameter name="platformName" value="firefox"/>
+
+        <classes>
+            <class name="Demo"/>
+        </classes>
+    </test>
+    <test name="Testcase 3">
+        <parameter name="platformName" value="chrome"/>
+
+        <classes>
+            <class name="Demo"/>
+
+        </classes>
+    </test>
+
+
+
+
+</suite>

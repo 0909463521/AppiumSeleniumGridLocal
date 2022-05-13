@@ -40,6 +40,11 @@ pipeline {
                 stage('Automation Test') {
                     steps{
                         sh "echo automation"
+                        sleep 13
+                        sh "cd ${WORKSPACE}/AppiumSeleniumGrid"
+                        sh "mvn clean install"
+                        sh "mvn test -P BachVu"
+
 
                     }
                 }
