@@ -42,8 +42,8 @@ pipeline {
                         sh "echo automation"
                         sleep 14
 
-                        sh "cd ${WORKSPACE}/AppiumSeleniumGrid"
-                        sh "ls"
+                       
+                        sh "mvn test"
 
 
                     }
